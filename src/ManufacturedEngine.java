@@ -21,8 +21,8 @@ public class ManufacturedEngine {
   }
 
   public ManufacturedEngine(String engineManufacturer, Date engineManufacturedDate,
-      String engineMake, String engineModel, int engineCylinders,
-      String engineType, String driveTrain) {
+      String engineMake, String engineModel,
+      String engineType, int engineCylinders, String driveTrain) {
 
     this.engineManufacturer = engineManufacturer;
     this.engineManufacturedDate = engineManufacturedDate;
@@ -40,7 +40,7 @@ public class ManufacturedEngine {
     output += "Engine Make: " + engineMake + "\n";
     output += "Engine Model: " + engineModel + "\n";
     output += "Engine Type: " + engineType + "\n";
-    output += "Engine Cylinders" + engineCylinders + "\n";
+    output += "Engine Cylinders: " + engineCylinders + "\n";
     output += "Drive Train: " + driveTrain + "\n";
     return output;
 

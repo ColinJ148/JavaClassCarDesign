@@ -1,12 +1,13 @@
 import java.util.Date;
 
 public class Car extends Vehicle {
+  private Feature[] feature = new Feature[10];
 
-  private Feature[] interoirfeature = new Feature[10];
-  private Feature[] exteriorfeature = new Feature[10];
+
 
 
   private int carAxle;
+
 
   public Car() {
     super();
@@ -15,50 +16,63 @@ public class Car extends Vehicle {
 
   public Car(Date date, String vehicleManufacturer,
       String vehicleMake, String vehicleModel, Chassis vehicleFrame,
-      String vehicleType, String driveTrain, ManufacturedEngine vehicleEngine) {
+      String vehicleType, String driveTrain, ManufacturedEngine vehicleEngine,  Feature[] features, int axle) {
     super(date, vehicleManufacturer,
         vehicleMake, vehicleModel, vehicleFrame,
         vehicleType, driveTrain, vehicleEngine);
-    this.carAxle = 2;
+    this.feature = features;
+    this.carAxle = axle;
   }
 
   @Override
   public String toString() {
     String output;
     output = super.toString();
-    output += getExteriorFeature();
+    output += getExteriorFeature() + "\n";
     output += getInteriorFeature() + "\n";
-    output += "Car Axle:     " + carAxle;
+    output += "Car Axle: " + carAxle;
     return output;
   }
 
   public String getExteriorFeature() {
-    String output = "Interior Freatures:  ";
+    String output = "Exterior Freatures:  ";
+    int i = 0;
     try {
-      for (int i = 0; i < interoirfeature.length; i++) {
-        if (!interoirfeature[i].equals("")) {
-          output += interoirfeature[i] + "\n";
-        }
+
+
+    while(feature[i] != null) {
+      if (feature[i] instanceof ExteriorFeature) {
+        output = feature[i].toString() + "\n";
       }
-    }catch(NullPointerException ex){
-      System.out.println("no exterior Features");
+      i++;
     }
+    }catch (ArrayIndexOutOfBoundsException e){
+
+    }
+//    for(int i = 0; i > feature.length;i++){
+//      if(feature[i] instanceof  ExteriorFeature){
+//        output = feature[i].toString() + "\n";
+//      }else{
+//        break;
+//      }
+//    }
 
     return output;
   }
 
 
   public String getInteriorFeature() {
-    String output = "Exterior Freatures:  ";
-    try {
-      for (int i = 0; i < exteriorfeature.length; i++) {
-        if (!exteriorfeature[i].equals("")) {
-          output += exteriorfeature[i] + "\n";
-        }
+    String output = "Interior Freatures:  ";
+
+    for(int i = 0; i > feature.length;i++){
+      if(feature[i] instanceof  InteriorFeature){
+        output = feature[i].toString() + "\n";
+      }else{
+        break;
       }
-    }catch (NullPointerException e){
-      System.out.println("no interior Features");
     }
+
+
     return output;
   }
 
