@@ -28,48 +28,49 @@ public class Car extends Vehicle {
   public String toString() {
     String output;
     output = super.toString();
-    output += getExteriorFeature() + "\n";
-    output += getInteriorFeature() + "\n";
+    output += "Features : " + "\n";
+    output += getInteriorFeature();
+    output += getExteriorFeature();
+
     output += "Car Axle: " + carAxle;
     return output;
   }
 
   public String getExteriorFeature() {
-    String output = "Exterior Freatures:  ";
+    String output = "";
     int i = 0;
+    if(feature[i] == null){
+      output = "[No Exterior Features]" + "\n";
+    }
     try {
-
-
     while(feature[i] != null) {
       if (feature[i] instanceof ExteriorFeature) {
-        output = feature[i].toString() + "\n";
+        output += feature[i].toString() + "\n";
       }
       i++;
     }
     }catch (ArrayIndexOutOfBoundsException e){
-
     }
-//    for(int i = 0; i > feature.length;i++){
-//      if(feature[i] instanceof  ExteriorFeature){
-//        output = feature[i].toString() + "\n";
-//      }else{
-//        break;
-//      }
-//    }
-
     return output;
   }
 
 
   public String getInteriorFeature() {
-    String output = "Interior Freatures:  ";
+    String output = "";
+    int i = 0;
+    if(feature[i] == null){
+      output = "[No Interior Features]" + "\n";
+    }
+    try {
+      while(feature[i] != null) {
+        if (feature[i] instanceof InteriorFeature) {
+          output += feature[i].toString() + "\n";
+        }
 
-    for(int i = 0; i > feature.length;i++){
-      if(feature[i] instanceof  InteriorFeature){
-        output = feature[i].toString() + "\n";
-      }else{
-        break;
+        i++;
       }
+    }catch (ArrayIndexOutOfBoundsException e){
+
     }
 
 

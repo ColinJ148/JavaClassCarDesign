@@ -11,13 +11,13 @@ public class ManufacturedEngine {
   private String driveTrain;
 
   public ManufacturedEngine() {
-    engineManufacturer = "none";
+    engineManufacturer = "Generic";
     engineManufacturedDate = new Date();
-    engineMake = "company";
-    engineModel = "Model #";
+    engineMake = "Generic";
+    engineModel = "Generic";
     engineCylinders = 0;
-    engineType = "gas";
-    driveTrain = "none";
+    engineType = "Generic";
+    driveTrain = "Generic";
   }
 
   public ManufacturedEngine(String engineManufacturer, Date engineManufacturedDate,

@@ -13,12 +13,12 @@ public class Vehicle implements Engine, Chassis {
 
   public Vehicle() {
     this.vehicleManufacturedDate = new Date();
-    this.vehicleManufacturer = "Generic";
-    this.vehicleMake = "Generic";
-    this.vehicleModel = "Generic";
+    this.vehicleManufacturer = " Generic";
+    this.vehicleMake = " Generic";
+    this.vehicleModel = " Generic";
     this.vehicleFrame = new VehicleFrame();
-    this.vehicleType = "None";
-    this.driveTrain = "2WD: Two-Wheel Drive";
+    this.vehicleType = " Generic";
+    this.driveTrain = " Generic";
     this.vehicleEngine = new ManufacturedEngine();
   }
 
